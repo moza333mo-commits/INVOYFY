@@ -1,0 +1,10 @@
+body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+        }
+        .sidebar-gradient {
+            background: linear-gradient(180deg, #064E3B 0%, #032E22 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.14) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
