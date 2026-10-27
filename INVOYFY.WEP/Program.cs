@@ -54,6 +54,7 @@ public class Program
 
         app.UseStatusCodePagesWithReExecute("/404.html");
 
+        // Serve wwwroot/index.html directly as the single source of truth
         app.UseDefaultFiles();
 
         var contentTypeProvider = new FileExtensionContentTypeProvider();
@@ -64,17 +65,24 @@ public class Program
             ContentTypeProvider = contentTypeProvider,
             OnPrepareResponse = ctx =>
             {
-                if (!app.Environment.IsDevelopment())
+                var fileName = ctx.File.Name;
+
+                // Always revalidate HTML files so mobile browsers never get stuck on cached HTML
+                if (fileName.EndsWith(".html", StringComparison.OrdinalIgnoreCase))
                 {
-                    var path = ctx.File.Name;
-                    if (path.EndsWith(".css", StringComparison.OrdinalIgnoreCase) ||
-                        path.EndsWith(".js", StringComparison.OrdinalIgnoreCase) ||
-                        path.EndsWith(".svg", StringComparison.OrdinalIgnoreCase) ||
-                        path.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                        path.EndsWith(".webp", StringComparison.OrdinalIgnoreCase))
-                    {
-                        ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=604800,immutable";
-                    }
+                    ctx.Context.Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+                    ctx.Context.Response.Headers["Pragma"] = "no-cache";
+                    ctx.Context.Response.Headers["Expires"] = "0";
+                }
+                else if (!app.Environment.IsDevelopment() &&
+                        (fileName.EndsWith(".css", StringComparison.OrdinalIgnoreCase) ||
+                         fileName.EndsWith(".js", StringComparison.OrdinalIgnoreCase) ||
+                         fileName.EndsWith(".svg", StringComparison.OrdinalIgnoreCase) ||
+                         fileName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                         fileName.EndsWith(".webp", StringComparison.OrdinalIgnoreCase)))
+                {
+                    // Static assets use ?v=20261027 query string for instant cache-busting when updated
+                    ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=86400";
                 }
             }
         });
