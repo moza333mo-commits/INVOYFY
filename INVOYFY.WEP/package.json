@@ -1,0 +1,13 @@
+{
+  "name": "invoify-web",
+  "version": "2.6.0",
+  "private": true,
+  "description": "Invoify Marketing Website — Tailwind CSS Production Build",
+  "scripts": {
+    "build:css": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
