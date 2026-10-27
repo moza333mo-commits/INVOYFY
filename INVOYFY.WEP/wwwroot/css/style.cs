@@ -1,6 +1,8 @@
 ﻿/* File: wwwroot/css/style.css */
+html,
 body {
   font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+  overflow-x: hidden;
 }
 
 .sidebar-gradient {
@@ -10,6 +12,16 @@ body {
 .hero-pattern {
   background-image: radial-gradient(rgba(16, 185, 129, 0.14) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+/* Hide scrollbars on horizontal pill/tab strips while preserving touch scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Focus outline for keyboard accessibility */
