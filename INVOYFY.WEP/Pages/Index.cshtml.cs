@@ -1,3 +1,4 @@
+﻿// File: Pages/Index.cshtml.cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,7 +8,6 @@ namespace INVOYFY.WEP.Pages
     {
         public void OnGet()
         {
-
         }
     }
 }

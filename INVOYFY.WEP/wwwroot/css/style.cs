@@ -1,8 +1,29 @@
 ﻿/* File: wwwroot/css/style.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  direction: rtl;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 html,
 body {
   font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+body.drawer-lock {
+  overflow: hidden;
 }
 
 .sidebar-gradient {
@@ -33,4 +54,263 @@ body {
 /* Smooth modal transitions */
 .modal-backdrop {
   transition: opacity 0.2s ease-in-out;
+}
+
+/* Global fluid media guard */
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hamburger button hidden on desktop, visible on mobile/tablet */
+.invoify-hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 0.75rem;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.invoify-hamburger-btn:hover {
+  background-color: #ECFDF5;
+  border-color: #10B981;
+  color: #064E3B;
+}
+
+/* Drawer backdrop */
+.invoify-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.invoify-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   Tablet & Mobile Breakpoint (< 1024px) - Drawer Sidebar & Header Compactness
+   ========================================================================== */
+@media (max-width: 1023.98px) {
+  .invoify-hamburger-btn {
+    display: inline-flex;
+  }
+
+  /* القائمة الجانبية كدرج منزلق (Drawer) من اليمين في بيئة RTL */
+  .invoify-responsive-sidebar,
+  .sidebar-gradient,
+  aside.sidebar,
+  #sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: min(84vw, 310px) !important;
+    max-width: 84vw !important;
+    height: 100dvh !important;
+    z-index: 999 !important;
+    transform: translateX(105%) !important;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow-y: auto !important;
+    box-shadow: -8px 0 24px rgba(3, 46, 34, 0.25) !important;
+  }
+
+  .invoify-responsive-sidebar.is-open,
+  .sidebar-gradient.is-open,
+  aside.sidebar.is-open,
+  #sidebar.is-open {
+    transform: translateX(0) !important;
+  }
+
+  /* إلغاء الهامش الجانبي للمحتوى الرئيسي على الشاشات الصغيرة */
+  main,
+  .main-content,
+  #main-content,
+  [class*="mr-64"],
+  [class*="mr-72"],
+  [class*="mr-80"],
+  [class*="pr-64"],
+  [class*="pr-72"] {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* تنظيم الهيدر ومنع تداخل العناصر */
+  header,
+  nav.top-nav,
+  .app-header {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile Breakpoint (< 768px) - Cards, Invoices, Forms, Modals & Dashboards
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* أزرار وحقول إدخال مناسبة للمس بالأصابع */
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    min-height: 42px;
+    font-size: 0.9375rem;
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  select,
+  textarea {
+    width: 100%;
+    border-radius: 0.75rem;
+  }
+
+  /* منع الأحجام الثابتة من التسبب بتمرير أفقي */
+  [style*="width:"],
+  [class*="w-["],
+  [class*="min-w-["] {
+    max-width: 100% !important;
+  }
+
+  /* تحويل الجداول إلى بطاقات محاسبية منظمة (Responsive Cards) */
+  table.invoify-responsive-table,
+  .responsive-table-cards {
+    border: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  table.invoify-responsive-table thead,
+  .responsive-table-cards thead {
+    display: none !important;
+  }
+
+  table.invoify-responsive-table,
+  table.invoify-responsive-table tbody,
+  table.invoify-responsive-table tr,
+  table.invoify-responsive-table td,
+  .responsive-table-cards,
+  .responsive-table-cards tbody,
+  .responsive-table-cards tr,
+  .responsive-table-cards td {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  table.invoify-responsive-table tbody tr,
+  .responsive-table-cards tbody tr {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 0.875rem !important;
+    padding: 0.75rem 0.875rem !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+  }
+
+  table.invoify-responsive-table tbody td,
+  .responsive-table-cards tbody td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.45rem 0 !important;
+    border-bottom: 1px dashed #F1F5F9 !important;
+    text-align: left !important;
+    word-break: break-word !important;
+  }
+
+  table.invoify-responsive-table tbody td:last-child,
+  .responsive-table-cards tbody td:last-child {
+    border-bottom: 0 !important;
+    padding-bottom: 0.15rem !important;
+  }
+
+  table.invoify-responsive-table tbody td::before,
+  .responsive-table-cards tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #475569;
+    text-align: right;
+    flex-shrink: 0;
+    max-width: 48%;
+  }
+
+  /* ضبط النوافذ المنبثقة (Modals) ضمن حدود شاشة الهاتف */
+  .modal-backdrop > div,
+  .modal-content,
+  [role="dialog"] > div {
+    width: calc(100vw - 1.25rem) !important;
+    max-width: calc(100vw - 1.25rem) !important;
+    max-height: calc(100dvh - 1.5rem) !important;
+    overflow-y: auto !important;
+    margin: 0.75rem auto !important;
+    border-radius: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  /* ضبط شبكات لوحة التحكم والفواتير */
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.625rem !important;
+  }
+}
+
+/* ==========================================================================
+   Extra Small Screens (320px - 375px) - Fine Typography & Padding Adjustments
+   ========================================================================== */
+@media (max-width: 375.98px) {
+  html {
+    font-size: 14px;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  table.invoify-responsive-table tbody tr,
+  .responsive-table-cards tbody tr {
+    padding: 0.625rem 0.75rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

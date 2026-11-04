@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// File: Pages/Privacy.cshtml.cs
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace INVOYFY.WEP.Pages
@@ -9,5 +10,4 @@ namespace INVOYFY.WEP.Pages
         {
         }
     }
-
 }

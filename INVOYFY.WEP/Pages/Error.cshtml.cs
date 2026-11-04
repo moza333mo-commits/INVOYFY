@@ -1,6 +1,7 @@
+﻿// File: Pages/Error.cshtml.cs
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Diagnostics;
 
 namespace INVOYFY.WEP.Pages
 {
@@ -17,5 +18,4 @@ namespace INVOYFY.WEP.Pages
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
-
 }
