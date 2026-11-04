@@ -8,7 +8,6 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  direction: rtl;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -66,35 +65,102 @@ iframe {
   height: auto;
 }
 
-/* Hamburger button hidden on desktop, visible on mobile/tablet */
-.invoify-hamburger-btn {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 0.75rem;
-  border: 1px solid #E2E8F0;
-  background-color: #F8FAFC;
-  color: #0F172A;
-  cursor: pointer;
+/* ==========================================================================
+   Header & Unified Top Controls (Language Switcher + Dark Mode + Hamburger)
+   ========================================================================== */
+.invoify-header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 0.75rem !important;
+}
+
+/* منع انكسار روابط الهيدر إلى سطرين على الكمبيوتر */
+header nav a,
+.invoify-desktop-nav a,
+header a[href^="#"] {
+  white-space: nowrap !important;
+}
+
+.invoify-actions-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+.invoify-utility-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 0.75rem !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid #E2E8F0 !important;
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+  font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.invoify-utility-btn:hover {
+  background-color: #ECFDF5 !important;
+  border-color: #10B981 !important;
+  color: #064E3B !important;
+}
+
+.dark .invoify-utility-btn,
+body.dark .invoify-utility-btn,
+[data-theme="dark"] .invoify-utility-btn {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+.dark .invoify-utility-btn:hover,
+body.dark .invoify-utility-btn:hover,
+[data-theme="dark"] .invoify-utility-btn:hover {
+  background-color: #064E3B !important;
+  border-color: #10B981 !important;
+  color: #ECFDF5 !important;
+}
+
+.invoify-lang-btn .lang-globe-icon {
+  color: #059669;
   flex-shrink: 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.invoify-hamburger-btn:hover {
-  background-color: #ECFDF5;
-  border-color: #10B981;
-  color: #064E3B;
+.invoify-dark-btn {
+  width: 40px !important;
+  padding: 0 !important;
 }
 
-/* Drawer backdrop */
+/* زر الهامبرغر يظهر فقط على الشاشات أقل من 1024px */
+.invoify-hamburger-btn {
+  display: none !important;
+  width: 40px !important;
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   Mobile Slide-Out Navigation Drawer
+   ========================================================================== */
 .invoify-drawer-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.48);
-  backdrop-filter: blur(2px);
-  z-index: 998;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 9998;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -105,63 +171,179 @@ iframe {
   pointer-events: auto;
 }
 
+.invoify-mobile-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: min(82vw, 310px);
+  max-width: 85vw;
+  height: 100dvh;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  box-shadow: -10px 0 30px rgba(15, 23, 42, 0.18);
+  transform: translateX(105%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+html[dir="ltr"] .invoify-mobile-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-105%);
+  box-shadow: 10px 0 30px rgba(15, 23, 42, 0.18);
+}
+
+.invoify-mobile-drawer.is-open {
+  transform: translateX(0) !important;
+}
+
+.dark .invoify-mobile-drawer,
+body.dark .invoify-mobile-drawer,
+[data-theme="dark"] .invoify-mobile-drawer {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-inline-start: 1px solid #1E293B;
+}
+
+.invoify-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.dark .invoify-drawer-header,
+body.dark .invoify-drawer-header {
+  border-bottom-color: #1E293B;
+}
+
+.invoify-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.invoify-drawer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #064E3B 0%, #10B981 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.invoify-drawer-title {
+  font-size: 1.15rem;
+  color: #064E3B;
+}
+
+.dark .invoify-drawer-title,
+body.dark .invoify-drawer-title {
+  color: #34D399;
+}
+
+.invoify-drawer-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.65rem;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  color: #475569;
+  cursor: pointer;
+}
+
+.dark .invoify-drawer-close,
+body.dark .invoify-drawer-close {
+  background: #1E293B;
+  border-color: #334155;
+  color: #CBD5E1;
+}
+
+.invoify-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.invoify-drawer-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  color: #1E293B;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.invoify-drawer-item:hover {
+  background-color: #ECFDF5;
+  color: #064E3B;
+}
+
+.dark .invoify-drawer-item,
+body.dark .invoify-drawer-item {
+  color: #E2E8F0;
+}
+
+.dark .invoify-drawer-item:hover,
+body.dark .invoify-drawer-item:hover {
+  background-color: #1E293B;
+  color: #34D399;
+}
+
+.invoify-drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  background-color: #064E3B;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  text-align: center;
+}
+
 /* ==========================================================================
-   Tablet & Mobile Breakpoint (< 1024px) - Drawer Sidebar & Header Compactness
+   Tablet & Mobile Breakpoint (< 1024px)
    ========================================================================== */
 @media (max-width: 1023.98px) {
   .invoify-hamburger-btn {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 
-  /* القائمة الجانبية كدرج منزلق (Drawer) من اليمين في بيئة RTL */
-  .invoify-responsive-sidebar,
-  .sidebar-gradient,
-  aside.sidebar,
-  #sidebar {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: min(84vw, 310px) !important;
-    max-width: 84vw !important;
-    height: 100dvh !important;
-    z-index: 999 !important;
-    transform: translateX(105%) !important;
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    overflow-y: auto !important;
-    box-shadow: -8px 0 24px rgba(3, 46, 34, 0.25) !important;
+  /* إخفاء روابط التنقل الأفقية في الهيدر على الشاشات الصغيرة لأنها تنتقل إلى الدرج المنزلق */
+  .invoify-desktop-nav,
+  header nav ul,
+  header .hidden.md\:flex,
+  header .hidden.lg\:flex {
+    display: none !important;
   }
 
-  .invoify-responsive-sidebar.is-open,
-  .sidebar-gradient.is-open,
-  aside.sidebar.is-open,
-  #sidebar.is-open {
-    transform: translateX(0) !important;
-  }
-
-  /* إلغاء الهامش الجانبي للمحتوى الرئيسي على الشاشات الصغيرة */
-  main,
-  .main-content,
-  #main-content,
-  [class*="mr-64"],
-  [class*="mr-72"],
-  [class*="mr-80"],
-  [class*="pr-64"],
-  [class*="pr-72"] {
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-
-  /* تنظيم الهيدر ومنع تداخل العناصر */
   header,
   nav.top-nav,
   .app-header {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
-    gap: 0.5rem !important;
-    flex-wrap: wrap !important;
   }
 }
 
@@ -169,15 +351,12 @@ iframe {
    Mobile Breakpoint (< 768px) - Cards, Invoices, Forms, Modals & Dashboards
    ========================================================================== */
 @media (max-width: 767.98px) {
-  /* أزرار وحقول إدخال مناسبة للمس بالأصابع */
-  button,
-  [role="button"],
-  input,
-  select,
-  textarea {
-    min-height: 42px;
-    font-size: 0.9375rem;
-    max-width: 100%;
+  /* إخفاء زر التحميل الضخم من شريط الهيدر العلوي في الموبايل ليبقى الهيدر أنيقاً (موجود في القائمة المنزلقة والصفحة) */
+  header a[href*="download"],
+  header a.bg-emerald-900,
+  header a.bg-emerald-800,
+  header a.bg-\[\#064E3B\] {
+    display: none !important;
   }
 
   input[type="text"],
@@ -188,7 +367,10 @@ iframe {
   input[type="search"],
   select,
   textarea {
+    min-height: 42px;
+    font-size: 0.9375rem;
     width: 100%;
+    max-width: 100%;
     border-radius: 0.75rem;
   }
 
@@ -235,6 +417,12 @@ iframe {
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
   }
 
+  .dark table.invoify-responsive-table tbody tr,
+  body.dark table.invoify-responsive-table tbody tr {
+    background-color: #1E293B !important;
+    border-color: #334155 !important;
+  }
+
   table.invoify-responsive-table tbody td,
   .responsive-table-cards tbody td {
     display: flex !important;
@@ -243,8 +431,13 @@ iframe {
     gap: 0.75rem !important;
     padding: 0.45rem 0 !important;
     border-bottom: 1px dashed #F1F5F9 !important;
-    text-align: left !important;
+    text-align: end !important;
     word-break: break-word !important;
+  }
+
+  .dark table.invoify-responsive-table tbody td,
+  body.dark table.invoify-responsive-table tbody td {
+    border-bottom-color: #334155 !important;
   }
 
   table.invoify-responsive-table tbody td:last-child,
@@ -259,9 +452,14 @@ iframe {
     font-weight: 700;
     font-size: 0.82rem;
     color: #475569;
-    text-align: right;
+    text-align: start;
     flex-shrink: 0;
     max-width: 48%;
+  }
+
+  .dark table.invoify-responsive-table tbody td::before,
+  body.dark table.invoify-responsive-table tbody td::before {
+    color: #94A3B8;
   }
 
   /* ضبط النوافذ المنبثقة (Modals) ضمن حدود شاشة الهاتف */
@@ -292,7 +490,7 @@ iframe {
 }
 
 /* ==========================================================================
-   Extra Small Screens (320px - 375px) - Fine Typography & Padding Adjustments
+   Extra Small Screens (320px - 375px)
    ========================================================================== */
 @media (max-width: 375.98px) {
   html {
@@ -303,9 +501,16 @@ iframe {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 
-  table.invoify-responsive-table tbody tr,
-  .responsive-table-cards tbody tr {
-    padding: 0.625rem 0.75rem !important;
+  .invoify-utility-btn {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 0.55rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  .invoify-dark-btn,
+  .invoify-hamburger-btn {
+    width: 36px !important;
   }
 }
 
