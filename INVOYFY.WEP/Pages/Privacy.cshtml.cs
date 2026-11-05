@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace INVOYFY.WEP.Pages
+namespace InvoifyWeb.Pages
 {
     public class PrivacyModel : PageModel
     {

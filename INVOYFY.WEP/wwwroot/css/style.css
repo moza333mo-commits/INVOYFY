@@ -355,6 +355,7 @@ body.dark .invoify-drawer-item:hover {
   header a[href*="download"],
   header a.bg-emerald-900,
   header a.bg-emerald-800,
+  header a.bg-emeraldBrand-800,
   header a.bg-\[\#064E3B\] {
     display: none !important;
   }
@@ -475,12 +476,16 @@ body.dark .invoify-drawer-item:hover {
     padding: 1rem !important;
   }
 
-  /* ضبط شبكات لوحة التحكم والفواتير */
-  .grid-cols-3,
-  .grid-cols-4,
+  /* ضبط شبكات لوحة التحكم مع الحفاظ على الأعمدة المصغرة لمعاينة طباعة A4 */
+  .grid-cols-3:not(.invoify-keep-cols),
+  .grid-cols-4:not(.invoify-print-grid),
   .grid-cols-5,
   .grid-cols-6 {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  .invoify-print-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 
   .grid-cols-2 {

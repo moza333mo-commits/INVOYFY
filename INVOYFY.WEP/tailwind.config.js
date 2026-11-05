@@ -1,6 +1,7 @@
 // File: tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./wwwroot/**/*.html",
     "./wwwroot/**/*.js",
@@ -16,11 +17,23 @@ module.exports = {
           accent: "#10B981",
           soft: "#ECFDF5",
           surface: "#F8FAFC"
+        },
+        emeraldBrand: {
+          50: "#ECFDF5",
+          100: "#D1FAE5",
+          200: "#A7F3D0",
+          400: "#34D399",
+          500: "#10B981",
+          600: "#059669",
+          700: "#047857",
+          800: "#065F46",
+          900: "#064E3B",
+          950: "#032E22"
         }
       },
       fontFamily: {
         sans: ["'Cairo'", "'Segoe UI'", "Tahoma", "sans-serif"],
-        cairo: ["'Cairo'", "sans-serif"]
+        cairo: ["'Cairo'", "'Segoe UI'", "Tahoma", "sans-serif"]
       },
       screens: {
         xs: "360px",

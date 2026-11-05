@@ -1,3 +1,4 @@
+<!-- File: wwwroot/index.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
@@ -235,7 +236,7 @@
 
                                 <!-- جدول مصغر للأصناف -->
                                 <div class="bg-white dark:bg-[#1E293B] rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                                    <table class="w-full text-[11px] text-center">
+                                    <table data-no-card-table="true" class="w-full text-[11px] text-center">
                                         <thead class="bg-[#E6F4EA] dark:bg-[#1E3A34] text-slate-800 dark:text-emeraldBrand-200 font-bold">
                                             <tr>
                                                 <th class="py-1.5 px-2">#</th>
@@ -268,7 +269,7 @@
                                 </div>
 
                                 <!-- بطاقات المجاميع السفلية -->
-                                <div class="grid grid-cols-3 gap-2 pt-1">
+                                <div class="grid grid-cols-3 invoify-keep-cols gap-2 pt-1">
                                     <div class="bg-[#F0FDF4] dark:bg-[#13332D] border border-[#BBF7D0] dark:border-[#1F5E52] rounded-lg p-2 text-center">
                                         <div class="text-[10px] text-[#15803D] dark:text-[#6EE7B7] font-bold">العدد الكلي</div>
                                         <div class="text-sm font-black text-[#15803D] dark:text-[#6EE7B7]">7 وحدات</div>
@@ -568,7 +569,7 @@
                 <!-- تمثيل مرئي لورقة A4 المزدوجة -->
                 <div class="lg:col-span-7">
                     <div class="bg-slate-100 dark:bg-slate-900 p-4 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-inner">
-                        <div class="grid grid-cols-11 gap-2 bg-white text-slate-900 p-4 rounded-xl shadow border border-slate-200 text-[10px]">
+                        <div class="grid grid-cols-1 sm:grid-cols-11 gap-2 bg-white text-slate-900 p-4 rounded-xl shadow border border-slate-200 text-[10px]">
                             <!-- نسخة العميل -->
                             <div class="col-span-5 border border-emeraldBrand-200 rounded-lg p-2.5 relative">
                                 <div class="flex justify-between items-start border-b border-emeraldBrand-100 pb-2 mb-2">
@@ -578,12 +579,12 @@
                                     </div>
                                     <div class="px-1.5 py-0.5 rounded bg-emeraldBrand-900 text-white font-bold text-[8px]">🛡️ موثقة ومعتمدة</div>
                                 </div>
-                                <div class="bg-emeraldBrand-900 text-white font-bold grid grid-cols-4 text-center py-1 rounded-t">
+                                <div class="bg-emeraldBrand-900 text-white font-bold grid grid-cols-4 invoify-print-grid text-center py-1 rounded-t">
                                     <span>البيان</span><span>العدد</span><span>الوزن</span><span>الإجمالي</span>
                                 </div>
                                 <div class="divide-y divide-slate-100 text-center py-1">
-                                    <div class="grid grid-cols-4 py-1"><span>راحة مكسرات</span><span>3 صندوق</span><span>150 Kg</span><span class="font-bold">$450</span></div>
-                                    <div class="grid grid-cols-4 py-1 bg-emeraldBrand-50/40"><span>نوغا فستق</span><span>4 طرد</span><span>40 Kg</span><span class="font-bold">$340</span></div>
+                                    <div class="grid grid-cols-4 invoify-print-grid py-1"><span>راحة مكسرات</span><span>3 صندوق</span><span>150 Kg</span><span class="font-bold">$450</span></div>
+                                    <div class="grid grid-cols-4 invoify-print-grid py-1 bg-emeraldBrand-50/40"><span>نوغا فستق</span><span>4 طرد</span><span>40 Kg</span><span class="font-bold">$340</span></div>
                                 </div>
                                 <!-- ختم مفرغ شفاف -->
                                 <div class="mt-3 pt-2 border-t border-emeraldBrand-100 flex justify-between items-center font-bold text-emeraldBrand-900">
@@ -593,7 +594,7 @@
                             </div>
 
                             <!-- خط القص -->
-                            <div class="col-span-1 flex flex-col items-center justify-center text-slate-400">
+                            <div class="col-span-1 hidden sm:flex flex-col items-center justify-center text-slate-400">
                                 <div class="h-full border-r border-dashed border-slate-400"></div>
                                 <span class="text-xs my-1">✂️</span>
                                 <div class="h-full border-r border-dashed border-slate-400"></div>
@@ -608,12 +609,12 @@
                                     </div>
                                     <div class="px-1.5 py-0.5 rounded bg-emeraldBrand-900 text-white font-bold text-[8px]">🛡️ موثقة ومعتمدة</div>
                                 </div>
-                                <div class="bg-emeraldBrand-900 text-white font-bold grid grid-cols-4 text-center py-1 rounded-t">
+                                <div class="bg-emeraldBrand-900 text-white font-bold grid grid-cols-4 invoify-print-grid text-center py-1 rounded-t">
                                     <span>البيان</span><span>العدد</span><span>الوزن</span><span>الإجمالي</span>
                                 </div>
                                 <div class="divide-y divide-slate-100 text-center py-1">
-                                    <div class="grid grid-cols-4 py-1"><span>راحة مكسرات</span><span>3 صندوق</span><span>150 Kg</span><span class="font-bold">$450</span></div>
-                                    <div class="grid grid-cols-4 py-1 bg-emeraldBrand-50/40"><span>نوغا فستق</span><span>4 طرد</span><span>40 Kg</span><span class="font-bold">$340</span></div>
+                                    <div class="grid grid-cols-4 invoify-print-grid py-1"><span>راحة مكسرات</span><span>3 صندوق</span><span>150 Kg</span><span class="font-bold">$450</span></div>
+                                    <div class="grid grid-cols-4 invoify-print-grid py-1 bg-emeraldBrand-50/40"><span>نوغا فستق</span><span>4 طرد</span><span>40 Kg</span><span class="font-bold">$340</span></div>
                                 </div>
                                 <div class="mt-3 pt-2 border-t border-emeraldBrand-100 flex justify-between items-center font-bold text-emeraldBrand-900">
                                     <span>الوزن: 190 Kg</span>
@@ -633,7 +634,7 @@
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-xs font-black px-3 py-1 rounded-full bg-emeraldBrand-50 dark:bg-emeraldBrand-900/50 text-emeraldBrand-800 dark:text-emeraldBrand-300 border border-emeraldBrand-200 dark:border-emeraldBrand-700">ابدأ مجاناً اليوم</span>
                 <h2 class="text-2xl sm:text-3xl font-black mt-3">حمّل النسخة التجريبية مجاناً 20 فاتورة فقط</h2>
-                <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base">جرّب كافة ميزات البرنامج بدون أي قيود لمدة شهر كامل. وعند انتهاء الفترة التجريبية تبقى جميع فواتيرك وبياناتك محفوظة وتستكمل عملك فور إدخال مفتاح التفعيل.</p>
+                <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base">جرّب كافة ميزات البرنامج بدون أي قيود لغاية 20 فاتورة مجانية. وعند انتهاء الفترة التجريبية تبقى جميع فواتيرك وبياناتك محفوظة وتستكمل عملك فور إدخال مفتاح التفعيل.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -859,21 +860,27 @@
     <div id="toastBanner" class="fixed bottom-5 left-5 z-50 hidden bg-emeraldBrand-900 text-white text-xs sm:text-sm font-bold px-4 py-3 rounded-xl shadow-lg border border-emeraldBrand-600">
         <span id="toastMessage">تمت العملية بنجاح</span>
     </div>
-
     <script>
         (function () {
+            'use strict';
+
+            if (window.__invoifyAppInitialized) {
+                return;
+            }
+            window.__invoifyAppInitialized = true;
+
             // 1. تبديل الوضع الليلي والنهاري
-            const themeToggleBtn = document.getElementById('themeToggleBtn');
-            const themeIcon = document.getElementById('themeIcon');
-            const htmlEl = document.documentElement;
+            var themeToggleBtn = document.getElementById('themeToggleBtn');
+            var themeIcon = document.getElementById('themeIcon');
+            var htmlEl = document.documentElement;
 
             function applyTheme(isDark) {
                 if (isDark) {
                     htmlEl.classList.add('dark');
-                    themeIcon.textContent = '☀️';
+                    if (themeIcon) themeIcon.textContent = '☀️';
                 } else {
                     htmlEl.classList.remove('dark');
-                    themeIcon.textContent = '🌙';
+                    if (themeIcon) themeIcon.textContent = '🌙';
                 }
                 try {
                     localStorage.setItem('invoify_web_dark', isDark ? '1' : '0');
@@ -886,14 +893,16 @@
                 }
             } catch (e) {}
 
-            themeToggleBtn.addEventListener('click', function () {
-                const isDarkNow = !htmlEl.classList.contains('dark');
-                applyTheme(isDarkNow);
-            });
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', function () {
+                    var isDarkNow = !htmlEl.classList.contains('dark');
+                    applyTheme(isDarkNow);
+                });
+            }
 
             // 2. التبديل بين شاشات البرنامج في قسم المعاينة
-            const tabButtons = document.querySelectorAll('.screen-tab-btn');
-            const panels = {
+            var tabButtons = document.querySelectorAll('.screen-tab-btn');
+            var panels = {
                 invoices: document.getElementById('screen-panel-invoices'),
                 products: document.getElementById('screen-panel-products'),
                 customers: document.getElementById('screen-panel-customers'),
@@ -903,7 +912,7 @@
 
             tabButtons.forEach(function (btn) {
                 btn.addEventListener('click', function () {
-                    const target = btn.getAttribute('data-screen');
+                    var target = btn.getAttribute('data-screen');
                     tabButtons.forEach(function (b) {
                         b.className = 'screen-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition';
                     });
@@ -918,67 +927,118 @@
             });
 
             // 3. النوافذ المنبثقة للتحميل وشراء الترخيص
-            const downloadModal = document.getElementById('downloadModal');
-            const licenseModal = document.getElementById('licenseModal');
+            var downloadModal = document.getElementById('downloadModal');
+            var licenseModal = document.getElementById('licenseModal');
 
             function openDownloadModal() {
-                downloadModal.classList.remove('hidden');
+                if (downloadModal) downloadModal.classList.remove('hidden');
             }
             function closeDownloadModal() {
-                downloadModal.classList.add('hidden');
+                if (downloadModal) downloadModal.classList.add('hidden');
             }
             function openLicenseModal() {
-                licenseModal.classList.remove('hidden');
+                if (licenseModal) licenseModal.classList.remove('hidden');
             }
             function closeLicenseModal() {
-                licenseModal.classList.add('hidden');
+                if (licenseModal) licenseModal.classList.add('hidden');
             }
 
-            document.getElementById('heroDownloadBtn').addEventListener('click', openDownloadModal);
-            document.getElementById('cardDownloadBtn').addEventListener('click', openDownloadModal);
-            document.getElementById('closeDownloadModalBtn').addEventListener('click', closeDownloadModal);
+            var heroDownloadBtn = document.getElementById('heroDownloadBtn');
+            var cardDownloadBtn = document.getElementById('cardDownloadBtn');
+            var closeDownloadModalBtn = document.getElementById('closeDownloadModalBtn');
 
-            document.getElementById('heroBuyLicenseBtn').addEventListener('click', openLicenseModal);
-            document.getElementById('cardBuyLicenseBtn').addEventListener('click', openLicenseModal);
-            document.getElementById('closeLicenseModalBtn').addEventListener('click', closeLicenseModal);
+            if (heroDownloadBtn) heroDownloadBtn.addEventListener('click', openDownloadModal);
+            if (cardDownloadBtn) cardDownloadBtn.addEventListener('click', openDownloadModal);
+            if (closeDownloadModalBtn) closeDownloadModalBtn.addEventListener('click', closeDownloadModal);
 
-            document.getElementById('topProductsTrigger').addEventListener('click', function () {
-                const suiteEl = document.getElementById('suite');
-                if (suiteEl) suiteEl.scrollIntoView({ behavior: 'smooth' });
+            var heroBuyLicenseBtn = document.getElementById('heroBuyLicenseBtn');
+            var cardBuyLicenseBtn = document.getElementById('cardBuyLicenseBtn');
+            var closeLicenseModalBtn = document.getElementById('closeLicenseModalBtn');
+
+            if (heroBuyLicenseBtn) heroBuyLicenseBtn.addEventListener('click', openLicenseModal);
+            if (cardBuyLicenseBtn) cardBuyLicenseBtn.addEventListener('click', openLicenseModal);
+            if (closeLicenseModalBtn) closeLicenseModalBtn.addEventListener('click', closeLicenseModal);
+
+            if (downloadModal) {
+                downloadModal.addEventListener('click', function (e) {
+                    if (e.target === downloadModal) closeDownloadModal();
+                });
+            }
+            if (licenseModal) {
+                licenseModal.addEventListener('click', function (e) {
+                    if (e.target === licenseModal) closeLicenseModal();
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeDownloadModal();
+                    closeLicenseModal();
+                }
             });
 
-            // 4. إرسال طلب الترخيص عبر واتساب
-            const toastBanner = document.getElementById('toastBanner');
-            const toastMessage = document.getElementById('toastMessage');
+            var topProductsTrigger = document.getElementById('topProductsTrigger');
+            if (topProductsTrigger) {
+                topProductsTrigger.addEventListener('click', function () {
+                    var suiteEl = document.getElementById('suite');
+                    if (suiteEl) suiteEl.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
 
-            function showToast(msg) {
-                toastMessage.textContent = msg;
+            // 4. إرسال طلب الترخيص عبر واتساب
+            var toastBanner = document.getElementById('toastBanner');
+            var toastMessage = document.getElementById('toastMessage');
+            var toastTimer = null;
+
+            function isEnglishActive() {
+                return htmlEl.getAttribute('lang') === 'en';
+            }
+
+            function showToast(msgAr, msgEn) {
+                if (!toastBanner || !toastMessage) return;
+                toastMessage.textContent = (isEnglishActive() && msgEn) ? msgEn : msgAr;
                 toastBanner.classList.remove('hidden');
-                setTimeout(function () {
+                if (toastTimer) clearTimeout(toastTimer);
+                toastTimer = setTimeout(function () {
                     toastBanner.classList.add('hidden');
                 }, 3500);
             }
 
-            document.getElementById('sendWhatsappLicenseBtn').addEventListener('click', function () {
-                const machineId = (document.getElementById('customerMachineIdInput').value || '').trim();
-                const text = machineId
-                    ? 'مرحباً، أرغب بشراء مفتاح تفعيل دائم لبرنامج Invoify. معرف الجهاز الخاص بي هو: ' + machineId
-                    : 'مرحباً، أرغب بشراء مفتاح تفعيل دائم لبرنامج إدارة الفواتير Invoify.';
-                const url = 'https://wa.me/?text=' + encodeURIComponent(text);
-                window.open(url, '_blank', 'noopener,noreferrer');
-                closeLicenseModal();
-                showToast('تم تجهيز رسالة طلب الترخيص بنجاح.');
-            });
+            var sendWhatsappLicenseBtn = document.getElementById('sendWhatsappLicenseBtn');
+            if (sendWhatsappLicenseBtn) {
+                sendWhatsappLicenseBtn.addEventListener('click', function () {
+                    var inputEl = document.getElementById('customerMachineIdInput');
+                    var machineId = inputEl ? (inputEl.value || '').trim() : '';
+                    var text;
+                    if (isEnglishActive()) {
+                        text = machineId
+                            ? 'Hello, I would like to purchase a lifetime activation key for Invoify. My Machine ID is: ' + machineId
+                            : 'Hello, I would like to purchase a lifetime activation key for the Invoify invoicing software.';
+                    } else {
+                        text = machineId
+                            ? 'مرحباً، أرغب بشراء مفتاح تفعيل دائم لبرنامج Invoify. معرف الجهاز الخاص بي هو: ' + machineId
+                            : 'مرحباً، أرغب بشراء مفتاح تفعيل دائم لبرنامج إدارة الفواتير Invoify.';
+                    }
+                    var url = 'https://wa.me/?text=' + encodeURIComponent(text);
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                    closeLicenseModal();
+                    showToast('تم تجهيز رسالة طلب الترخيص بنجاح.', 'License request message prepared successfully.');
+                });
+            }
 
             // 5. أزرار التنبيه بالمنتجات المستقبلية
             document.querySelectorAll('.notify-product-btn').forEach(function (btn) {
                 btn.addEventListener('click', function () {
-                    const pName = btn.getAttribute('data-notify-product') || 'المنتج';
-                    showToast('تم تسجيل اهتمامك بـ (' + pName + ') — سنخبرك فور إطلاقه!');
+                    var pName = btn.getAttribute('data-notify-product') || (isEnglishActive() ? 'Product' : 'المنتج');
+                    showToast(
+                        'تم تسجيل اهتمامك بـ (' + pName + ') — سنخبرك فور إطلاقه!',
+                        'Your interest in (' + pName + ') has been registered — we will notify you on launch!'
+                    );
                 });
             });
         })();
     </script>
+    <script src="/js/app.js" defer></script>
   <script src="/js/invoify-mobile.js" defer></script>
 </body>
 </html>

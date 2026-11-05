@@ -1,0 +1,103 @@
+<!-- File: wwwroot/404.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة — Invoify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'Segoe UI', 'Tahoma', 'sans-serif'],
+                    },
+                    colors: {
+                        emeraldBrand: {
+                            50: '#ECFDF5',
+                            100: '#D1FAE5',
+                            200: '#A7F3D0',
+                            400: '#34D399',
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065F46',
+                            900: '#064E3B',
+                            950: '#032E22',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="bg-[#F4F7F5] dark:bg-[#0F172A] text-[#0F172A] dark:text-[#F8FAFC] min-h-screen flex flex-col justify-between transition-colors duration-200 antialiased">
+    <header class="bg-white/95 dark:bg-[#1E293B]/95 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl sidebar-gradient flex items-center justify-center shadow-sm border border-emeraldBrand-700">
+                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                        <defs>
+                            <linearGradient id="invoifyLogoGrad404" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#34D399"/>
+                                <stop offset="100%" stop-color="#10B981"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#invoifyLogoGrad404)" d="M7,6 C10,6 12,8 15,16 L20,30 L27,10 C28.5,6.5 31,6 34,6 C36.5,6 38,8 36.5,11.5 L25,35 C23.5,38 21,39 18.5,39 C16,39 13.5,37.5 12,34 L4.5,11.5 C3.5,8.5 4.8,6 7,6 Z"/>
+                        <circle cx="30" cy="8" r="4" fill="#D1FAE5" opacity="0.9"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-emeraldBrand-800 dark:text-emeraldBrand-400">Invoify</span>
+                    <p class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 -mt-1">نظام إدارة المبيعات والفواتير</p>
+                </div>
+            </a>
+            <div class="flex items-center gap-2.5">
+                <button type="button" id="themeToggleBtn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:border-emeraldBrand-500 transition" title="تبديل الوضع الليلي / النهاري">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <a href="/" class="px-4 py-2 rounded-lg bg-emeraldBrand-800 hover:bg-emeraldBrand-700 text-white font-bold text-xs sm:text-sm shadow-sm transition">الرئيسية</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-16 hero-pattern">
+        <div class="max-w-lg w-full bg-white dark:bg-[#1E293B] rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl p-8 text-center space-y-5">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-emeraldBrand-50 dark:bg-emeraldBrand-900/50 text-emeraldBrand-800 dark:text-emeraldBrand-300 font-black text-3xl border border-emeraldBrand-200 dark:border-emeraldBrand-700">
+                404
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">عذراً، الصفحة التي تبحث عنها غير موجودة</h1>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                قد يكون الرابط غير صحيح أو تم نقل الصفحة. يمكنك العودة إلى الصفحة الرئيسية لمتابعة استعراض برنامج Invoify.
+            </p>
+            <div class="pt-2">
+                <a href="/" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emeraldBrand-800 hover:bg-emeraldBrand-700 text-white font-black text-sm shadow-lg transition">
+                    <span>العودة إلى الصفحة الرئيسية</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#032E22] text-emeraldBrand-100 py-6 border-t border-emeraldBrand-900 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="font-black text-white text-base">Invoify</span>
+                <span class="text-emeraldBrand-400">•</span>
+                <span class="text-emeraldBrand-200">نظام إدارة فواتير المبيعات والمستودعات</span>
+            </div>
+            <div class="text-emeraldBrand-300">
+                جميع الحقوق محفوظة &copy; 2026 — صُمم بعناية لقطاع الأعمال والتجارة.
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/invoify-mobile.js" defer></script>
+</body>
+</html>

@@ -1,19 +1,20 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!-- File: Pages/Shared/_Layout.cshtml -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - INVOYFY.WEP</title>
+    <title>@ViewData["Title"] - Invoify</title>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/INVOYFY.WEP.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InvoifyWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">INVOYFY.WEP</a>
+                <a class="navbar-brand fw-bold" href="/">Invoify</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,10 +22,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" href="/">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">سياسة الخصوصية</a>
                         </li>
                     </ul>
                 </div>
@@ -39,7 +40,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - INVOYFY.WEP - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2026 - Invoify - <a asp-area="" asp-page="/Privacy">سياسة الخصوصية</a>
         </div>
     </footer>
 
